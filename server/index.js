@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var express = require('express');
-var config = require('../webpack.config');
+const path = require('path');
+const webpack = require('webpack');
+const express = require('express');
+const config = (process.env.NODE_ENV === 'prod') ? require('../webpack.config.production') : require('../webpack.config');
 
 var app = express();
 var compiler = webpack(config);
@@ -12,7 +12,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
