@@ -10,6 +10,7 @@ export default (state = { status: 'pending' }, action) => {
       state = { ...state, status: 'loading' };
       break;
     case GET_VIDEOS_ERROR:
+      console.log(action);
       state = { ...state, status: 'error', error: action.payload };
       break;
     case GET_VIDEOS_SUCCESS:
