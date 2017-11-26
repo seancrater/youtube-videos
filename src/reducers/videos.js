@@ -13,7 +13,13 @@ export default (state = { status: 'pending' }, action) => {
       state = { ...state, status: 'error', error: action.payload };
       break;
     case GET_VIDEOS_SUCCESS:
-      state = { ...state, status: 'success', videos: action.payload };
+      const { items, nextPageToken } = action.payload;
+      state = {
+        ...state,
+        nextPage: nextPageToken,
+        status: 'success',
+        videos: items
+      };
       break;
   }
 
