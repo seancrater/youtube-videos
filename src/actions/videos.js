@@ -10,8 +10,7 @@ export const getVideos = options => {
   return dispatch => {
     dispatch({ type: GET_VIDEOS });
 
-    const OFFSET = options.offset ? options.offset : '',
-          QUERY = options.query ? options.query : '';
+    const QUERY = options && options.query ? options.query : 'surf';
 
     axios.get(`https://www.googleapis.com/youtube/v3/search?key=${ API_KEY }&part=snippet&type=video&q=${ QUERY }`)
       .then(response => {

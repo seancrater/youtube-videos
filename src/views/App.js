@@ -1,9 +1,14 @@
+import { getVideos } from '../actions/videos';
+import VideoList from '../components/VideoList';
 import React from 'react';
 import { connect } from 'react-redux';
-import VideoList from '../components/VideoList';
 import '../stylesheets/styles.scss';
 
 class App extends React.Component {
+  componentWillMount() {
+    this.props.dispatch(getVideos());
+  }
+
   render() {
     const { dispatch, videos } = this.props;
 
