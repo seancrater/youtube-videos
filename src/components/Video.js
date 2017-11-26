@@ -6,10 +6,10 @@ export default class Video extends React.Component {
     const { id, snippet } = data;
 
     return (
-      <div className={ `Video` }>
-        <a href={`https://www.youtube.com/watch?v=${ id.videoId }`}>
-          <h3 className={ `Video__title` }>{ snippet.title }</h3>
-          <p className={ `Video__channel` }>{ snippet.channelTitle }</p>
+      <div className='Video'>
+        <a href={`https://www.youtube.com/watch?v=${ id.videoId }`} target='_blank'>
+          <h3 className='Video__title'>{ snippet.title }</h3>
+          <p className='Video__channel'>{ snippet.channelTitle }</p>
         </a>
       </div>
     );

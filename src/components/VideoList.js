@@ -17,7 +17,7 @@ export default class VideoList extends React.Component {
 
   render() {
     return (
-      <div className={ `VideoList` }>
+      <div className='VideoList'>
         { this.renderVideos() }
       </div>
     );
