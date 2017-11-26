@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Video extends Component {
+export default class Video extends React.Component {
   render() {
     const { data } = this.props;
 
