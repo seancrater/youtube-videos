@@ -1,4 +1,5 @@
 import { getVideos } from '../actions/videos';
+import SearchBox from '../components/SearchBox';
 import VideoList from '../components/VideoList';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -14,6 +15,7 @@ class App extends React.Component {
 
     return (
       <div className={ `App` }>
+        <SearchBox />
         <VideoList
           dispatch={ dispatch }
           videos={ videos }
