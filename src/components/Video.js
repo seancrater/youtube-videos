@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-export default class HelloWorld extends Component {
+export default class Video extends Component {
   render() {
+    const { data } = this.props;
+
     return (
-      <h1>Hello, world.</h1>
     );
   }
 }
