@@ -8,9 +8,15 @@ export default class VideoPreview extends React.Component {
     return (
       <div className='VideoPreview'>
         <a href={`/video/${ id.videoId }`}>
+          <img
+            alt={`${ snippet.title } | ${ snippet.channelTitle }`}
+            className='VideoPreview__image'
+            src={ snippet.thumbnails.medium.url }
+          />
           <h3 className='VideoPreview__title'>{ snippet.title }</h3>
-          <p className='VideoPreview__channel'>{ snippet.channelTitle }</p>
         </a>
+        <p className='VideoPreview__description'>{ snippet.description }</p>
+        <p className='VideoPreview__channel'>{ snippet.channelTitle }</p>
       </div>
     );
   }
