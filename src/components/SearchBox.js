@@ -9,11 +9,13 @@ export default class SearchBox extends React.Component {
       const { dispatch, history } = this.props;
       const { value } = this.searchInput;
 
+      // Resetting page and setting new query
       dispatch(getVideos({
         page: null,
         query: value
       }));
 
+      // Returning to the homepage to render new options
       history.push('/');
     }
   }
