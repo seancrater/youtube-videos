@@ -1,16 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import SearchBox from '../components/SearchBox';
 import '../stylesheets/styles.scss';
 
-export default class Template extends React.Component {
+class Template extends React.Component {
   render() {
-    const { children } = this.props;
+    const { children, dispatch } = this.props;
 
     return (
       <div>
-        <SearchBox />
-        { children }
+        <SearchBox dispatch={ dispatch } />
+        { React.cloneElement(this.props.children, { ...this.props }) }
       </div>
     );
   }
 }
+
+export default connect(state => {
+  return {
+    videos: state.videos
+  };
+})(Template);

@@ -18,7 +18,7 @@ class VideoList extends React.Component {
         <VideoPreview data={ video } key={ index } />
       );
     } else {
-      return <Banner type='error' />
+      return <Banner type={ videos.status } />
     }
   }
 
