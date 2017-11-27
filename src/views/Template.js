@@ -1,23 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import SearchBox from '../components/SearchBox';
 import '../stylesheets/styles.scss';
 
 class Template extends React.Component {
   render() {
-    const { children, dispatch } = this.props;
+    const { children, dispatch, history } = this.props;
 
     return (
       <div>
-        <SearchBox dispatch={ dispatch } />
+        <SearchBox dispatch={ dispatch } history={ history } />
         { React.cloneElement(this.props.children, { ...this.props }) }
       </div>
     );
   }
 }
 
-export default connect(state => {
+export default withRouter(connect(state => {
   return {
     videos: state.videos
   };
-})(Template);
+})(Template));
