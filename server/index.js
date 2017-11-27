@@ -5,6 +5,7 @@ const config = (process.env.NODE_ENV === 'prod') ? require('../webpack.config.pr
 
 var app = express();
 var compiler = webpack(config);
+const port = process.env.NODE_ENV === 'prod' ? 80 : 3000;
 
 app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
@@ -16,7 +17,7 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-app.listen(3000, function(err) {
+app.listen(port, function(err) {
   if (err) {
     return console.error(err);
   }
