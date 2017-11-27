@@ -7,7 +7,7 @@ export default class VideoPreview extends React.Component {
 
     return (
       <div className='Video'>
-        <a href={`https://www.youtube.com/watch?v=${ id.videoId }`} target='_blank'>
+        <a href={`/video/${ id.videoId }`}>
           <h3 className='Video__title'>{ snippet.title }</h3>
           <p className='Video__channel'>{ snippet.channelTitle }</p>
         </a>
