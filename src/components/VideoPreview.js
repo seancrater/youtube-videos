@@ -6,7 +6,7 @@ export default class VideoPreview extends React.Component {
     const { id, snippet } = data;
 
     return (
-      <div className='Video'>
+      <div className='VideoPreview'>
         <a href={`/video/${ id.videoId }`}>
           <h3 className='Video__title'>{ snippet.title }</h3>
           <p className='Video__channel'>{ snippet.channelTitle }</p>
