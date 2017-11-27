@@ -1,5 +1,6 @@
 import React from 'react';
 import Template from './Template';
+import VideoEmbed from '../components/VideoEmbed';
 
 export default class Video extends React.Component {
   render() {
@@ -8,9 +9,7 @@ export default class Video extends React.Component {
     return (
       <Template>
         <div className='Video'>
-          <h1>
-            { videoID }
-          </h1>
+          <VideoEmbed id={ videoID } />
         </div>
       </Template>
     );
