@@ -28,6 +28,8 @@
 }
 
 .Comments {
+  margin-top: $unit*4;
+
   &--single {
     display: flex;
     margin-bottom: $unit*2;
