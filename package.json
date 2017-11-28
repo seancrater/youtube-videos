@@ -1,7 +1,7 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "youtube-videos",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "A little SPA to take advantage of some YouTube APIs to query surf videos",
   "scripts": {
     "prod": "NODE_ENV=prod node server",
     "start": "node server",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/seancrater/youtube-videos.git"
   },
   "keywords": [
     "react",
@@ -22,7 +22,7 @@
     "edit",
     "webpack"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Sean Crater <sean@seancrater.com> (http://github.com/seancrater)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
