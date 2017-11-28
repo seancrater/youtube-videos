@@ -14,23 +14,24 @@ class VideoList extends React.Component {
     this.props.dispatch(getVideos(beachBoys));
   }
 
-  renderVideos() {
-    const { videos } = this.props;
-
+  renderVideos(videos) {
     if( videos.status === 'success' ) {
       return videos.videos.map((video, index) =>
         <VideoPreview data={ video } key={ index } />
       );
-    } else {
-      return <Banner type={ videos.status } />
     }
   }
 
   render() {
+    const { videos } = this.props;
+
     return (
       <Template>
-        <div className='VideoList'>
-          { this.renderVideos() }
+        <div>
+          { videos.status !== 'success' ? <Banner type={ videos.status } /> : null }
+          <div className='VideoList'>
+            { this.renderVideos(videos) }
+          </div>
         </div>
       </Template>
     );
