@@ -17,7 +17,6 @@ export default class VideoPreview extends React.Component {
           <h3 className='VideoPreview__title'>{ snippet.title }</h3>
         </Link>
         <p className='VideoPreview__description'>{ snippet.description }</p>
-        <p className='VideoPreview__channel'>{ snippet.channelTitle }</p>
       </div>
     );
   }
