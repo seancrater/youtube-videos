@@ -10,7 +10,7 @@ class Template extends React.Component {
     const { children, dispatch, history, match, videos } = this.props;
 
     return (
-      <div>
+      <div className='Template'>
         <SearchBox dispatch={ dispatch } history={ history } />
         { React.cloneElement(this.props.children, { ...this.props }) }
         { match.path === '/' ? <Pagination dispatch={ dispatch } state={ videos } /> : null }
