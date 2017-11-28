@@ -20,6 +20,6 @@ export const getVideos = options => {
       })
       .catch(err => {
         dispatch({ type: GET_VIDEOS_ERROR, payload: err });
-      })
+      });
   }
 };
