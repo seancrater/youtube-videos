@@ -3,10 +3,23 @@
   text-align: center;
 
   &__button {
-    background-color: transparent;
-    border: 2px solid salmon;
-    font-size: 16px;
-    padding: $unit $unit*4;
+    background-color: $dark-blue;
+    border: 1px solid $dark-blue;
+    color: $white;
+    font-size: .85em;
+    font-weight: $fw-bold;
+    letter-spacing: .025em;
+    padding: $unit/2 $unit;
+    text-transform: uppercase;
+    transition: all .15s ease;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $white;
+      color: $dark-blue;
+      transition: all .15s ease;
+    }
 
     &:nth-of-type(2) {
       margin-left: $unit*2;

@@ -1,3 +1,39 @@
 .SearchBox {
+  display: inline-flex;
 
+  &__button {
+    background-color: $dark-blue;
+    border: 1px solid $dark-blue;
+    color: $white;
+    font-size: .75em;
+    font-weight: $fw-bold;
+    letter-spacing: .025em;
+    padding: $unit/2 $unit;
+    text-transform: uppercase;
+    transition: all .15s ease;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $white;
+      color: $dark-blue;
+      transition: all .15s ease;
+    }
+  }
+
+  &__input {
+    border: 1px solid $light-blue;
+    border-radius: $unit/4;
+    margin-right: $unit/2;
+    padding: $unit/2;
+    transition: border-color .15s ease;
+
+    &:active,
+    &:focus {
+      border-color: $dark-blue;
+      box-shadow: none;
+      outline: none;
+      transition: border-color .15s ease;
+    }
+  }
 }
