@@ -14,11 +14,15 @@
     transition: all .15s ease;
 
     &:active,
-    &:focus,
     &:hover {
       background-color: $white;
       color: $dark-blue;
       transition: all .15s ease;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
     }
 
     &:nth-of-type(2) {

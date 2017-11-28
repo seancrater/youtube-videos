@@ -2,13 +2,15 @@ import React from 'react';
 
 export default class Comments extends React.Component {
   renderComments(comments) {
-    return comments.map(comment => {
+    return comments.map((comment, index) => {
       const { snippet } = comment;
       const single = snippet.topLevelComment.snippet;
+      const date = new Date(single.publishedAt);
+      const dateFormatted = date.toLocaleString().replace(',', '');
       console.log(single);
 
       return (
-        <div className='Comments--single'>
+        <div className='Comments--single' key={ index }>
           <img
             alt={ single.authorDisplayName }
             className='Comment__image'
@@ -16,7 +18,7 @@ export default class Comments extends React.Component {
           />
           <a className='Comment__author' href={ single.authorChannelUrl }>{ single.authorDisplayName }</a>
           <p className='Comment__text'>{ single.textOriginal }</p>
-          <p className='Comment__date'>{ single.publishedAt }</p>
+          <p className='Comment__date'>{ dateFormatted }</p>
         </div>
       );
     });
@@ -27,6 +29,7 @@ export default class Comments extends React.Component {
 
     return (
       <div className='Comments'>
+        <h3 className='Comments__title'>Latest Comments</h3>
         { this.renderComments(comments) }
       </div>
     );
