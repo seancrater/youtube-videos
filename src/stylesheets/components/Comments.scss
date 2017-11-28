@@ -1,9 +1,43 @@
 .Comment {
+  &__author {
+    color: $blue;
+    line-height: 28px;
+  }
 
+  &__body {
+    margin-left: $unit*2;
+  }
+
+  &__date {
+    color: $dark-blue;
+    font-size: .75em;
+    margin-top: $unit/4;
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: 28px;
+    width: auto;
+  }
+
+  &__text {
+    color: $dark-blue;
+    margin-bottom: $unit;
+    margin-top: $unit;
+  }
 }
 
 .Comments {
+  &--single {
+    display: flex;
+    margin-bottom: $unit*2;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
   &__title {
-    
+    color: $dark-blue;
   }
 }
