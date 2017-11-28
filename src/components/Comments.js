@@ -1,3 +1,4 @@
+import Banner from './Banner';
 import React from 'react';
 
 export default class Comments extends React.Component {
@@ -26,11 +27,12 @@ export default class Comments extends React.Component {
 
   render() {
     const { comments } = this.props;
+    console.log(comments);
 
     return (
       <div className='Comments'>
         <h3 className='Comments__title'>Latest Comments</h3>
-        { this.renderComments(comments) }
+        { comments.length ? this.renderComments(comments) : <Banner type='no-comments' /> }
       </div>
     );
   }

@@ -12,6 +12,8 @@ export default class Banner extends React.Component {
       case 'loading':
         text = 'Results are loading...';
         break;
+      case 'no-comments':
+        text = 'This video has no comments.';
     }
 
     return text;
@@ -23,7 +25,8 @@ export default class Banner extends React.Component {
     const classes = {
       'Banner': true,
       'Banner--error': type === 'error',
-      'Banner--loading': type === 'loading'
+      'Banner--loading': type === 'loading',
+      'Banner--comments': type === 'no-comments'
     };
 
     return (
