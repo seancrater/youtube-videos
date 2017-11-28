@@ -18,7 +18,7 @@ class Video extends React.Component {
       <Template>
         <div className='Video'>
           <VideoEmbed id={ match.params.id } />
-          { comments.status === 'success' ? <Comments comments={ comments.items } /> : '' }
+          <Comments comments={ comments.items } />
         </div>
       </Template>
     );

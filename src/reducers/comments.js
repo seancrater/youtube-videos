@@ -11,7 +11,7 @@ export default (state = { status: 'pending' }, action) => {
       break;
     case GET_COMMENTS_ERROR:
       console.log(action);
-      state = { ...state, status: 'error', error: action.payload };
+      state = { ...state, status: 'error', error: action.payload, items: false };
       break;
     case GET_COMMENTS_SUCCESS:
       const { items } = action.payload;

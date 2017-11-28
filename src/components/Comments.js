@@ -31,8 +31,8 @@ export default class Comments extends React.Component {
 
     return (
       <div className='Comments'>
-        <h3 className='Comments__title'>Latest Comments</h3>
-        { comments.length ? this.renderComments(comments) : <Banner type='no-comments' /> }
+        { comments ? <h3 className='Comments__title'>Latest Comments</h3> : null }
+        { comments ? this.renderComments(comments) : <Banner type='no-comments' /> }
       </div>
     );
   }
