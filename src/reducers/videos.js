@@ -14,13 +14,17 @@ export default (state = { status: 'pending' }, action) => {
       state = { ...state, status: 'error', error: action.payload };
       break;
     case GET_VIDEOS_SUCCESS:
-      const { items, nextPageToken } = action.payload;
+      const { items, nextPageToken, prevPageToken } = action.payload;
       state = {
         ...state,
-        nextPage: nextPageToken,
+        nextPage: nextPageToken ? nextPageToken : null,
+        prevPage: prevPageToken ? prevPageToken : null,
         status: 'success',
         videos: items
       };
+
+      action.query ? state.query = action.query : null;
+
       break;
   }
 

@@ -12,11 +12,11 @@ export const getVideos = options => {
 
     const DEFAULT_OPTIONS = `&maxResults=10&part=snippet&type=video`,
           PAGE = options && options.page ? `&pageToken=${ options.page }` : '',
-          QUERY = options && options.query ? options.query : '';
+          QUERY = options && options.query ? options.query : null;
 
-    axios.get(`https://www.googleapis.com/youtube/v3/search?key=${ API_KEY }&q=surf + ${ QUERY + PAGE + DEFAULT_OPTIONS }`)
+    axios.get(`https://www.googleapis.com/youtube/v3/search?key=${ API_KEY }&q=surf${ ' + ' + QUERY + PAGE + DEFAULT_OPTIONS }`)
       .then(response => {
-        dispatch({ type: GET_VIDEOS_SUCCESS, payload: response.data });
+        dispatch({ type: GET_VIDEOS_SUCCESS, payload: response.data, query: QUERY });
       })
       .catch(err => {
         dispatch({ type: GET_VIDEOS_ERROR, payload: err });

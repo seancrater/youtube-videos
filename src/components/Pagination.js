@@ -1,9 +1,28 @@
+import { getVideos } from '../actions/videos';
 import classNames from 'classnames';
 import React from 'react';
 
 export default class Pagination extends React.Component {
+  renderButton(key) {
+    const { dispatch, state } = this.props;
+    const options = {
+      page: state[key],
+      query: state.query
+    };
+
+    if(state[key]) {
+      return (
+        <button
+          onClick={ () => dispatch(getVideos(options)) }
+        >
+          { key === 'nextPage' ? 'Next' : 'Previous' }
+        </button>
+      );
+    }
+  }
+
   render() {
-    const { next } = this.props;
+    const { state } = this.props;
 
     const classes = {
       'Pagination': true
@@ -11,7 +30,8 @@ export default class Pagination extends React.Component {
 
     return (
       <div className={ classNames(classes) }>
-        { /* Buttons will go here */ }
+        { this.renderButton('prevPage') }
+        { this.renderButton('nextPage') }
       </div>
     );
   }
