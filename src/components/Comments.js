@@ -16,7 +16,13 @@ export default class Comments extends React.Component {
             src={ single.authorProfileImageUrl }
           />
           <div className='Comment__body'>
-            <a className='Comment__author' href={ single.authorChannelUrl }>{ single.authorDisplayName }</a>
+            <a
+              className='Comment__author'
+              href={ single.authorChannelUrl }
+              target='_blank'
+            >
+              { single.authorDisplayName }
+            </a>
             <p className='Comment__text'>{ single.textOriginal }</p>
             <p className='Comment__date'>{ dateFormatted }</p>
           </div>
