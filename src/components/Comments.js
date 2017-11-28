@@ -5,9 +5,7 @@ export default class Comments extends React.Component {
     return comments.map((comment, index) => {
       const { snippet } = comment;
       const single = snippet.topLevelComment.snippet;
-      const date = new Date(single.publishedAt);
-      const dateFormatted = date.toLocaleString().replace(',', '');
-      console.log(single);
+      const dateFormatted = new Date(single.publishedAt).toLocaleString().replace(',', '');
 
       return (
         <div className='Comments--single' key={ index }>
