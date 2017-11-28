@@ -7,7 +7,11 @@ import VideoPreview from '../components/VideoPreview';
 
 class VideoList extends React.Component {
   componentWillMount() {
-    this.props.dispatch(getVideos());
+    const beachBoys = {
+      query: 'in usa'
+    };
+
+    this.props.dispatch(getVideos(beachBoys));
   }
 
   renderVideos() {
