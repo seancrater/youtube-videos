@@ -13,6 +13,7 @@ export default class Pagination extends React.Component {
     if(state[key]) {
       return (
         <button
+          className='Pagination__button'
           onClick={ () => dispatch(getVideos(options)) }
         >
           { key === 'nextPage' ? 'Next' : 'Previous' }

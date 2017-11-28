@@ -23,6 +23,7 @@ export default (state = { status: 'pending' }, action) => {
         videos: items
       };
 
+      // Conditionally setting query as a part of the state if there's a provided query
       action.query ? state.query = action.query : null;
 
       break;

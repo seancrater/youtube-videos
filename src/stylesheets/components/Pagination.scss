@@ -1,0 +1,16 @@
+.Pagination {
+  margin-bottom: $unit*2;
+  margin-top: $unit;
+  text-align: center;
+
+  &__button {
+    background-color: transparent;
+    border: 2px solid salmon;
+    font-size: 16px;
+    padding: $unit $unit*4;
+
+    &:nth-of-type(2) {
+      margin-left: $unit*2;
+    }
+  }
+}

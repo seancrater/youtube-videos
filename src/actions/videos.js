@@ -10,7 +10,7 @@ export const getVideos = options => {
   return dispatch => {
     dispatch({ type: GET_VIDEOS });
 
-    const DEFAULT_OPTIONS = `&maxResults=10&part=snippet&type=video`,
+    const DEFAULT_OPTIONS = `&maxResults=9&part=snippet&type=video`,
           PAGE = options && options.page ? `&pageToken=${ options.page }` : '',
           QUERY = options && options.query ? options.query : null;
 

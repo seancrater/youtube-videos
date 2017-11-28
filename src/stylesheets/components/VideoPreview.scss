@@ -1,0 +1,12 @@
+.VideoPreview {
+  width: 48%;
+
+  &__image {
+    height: auto;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 32%;
+  }
+}

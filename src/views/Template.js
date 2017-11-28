@@ -7,13 +7,13 @@ import '../stylesheets/styles.scss';
 
 class Template extends React.Component {
   render() {
-    const { children, dispatch, history, videos } = this.props;
+    const { children, dispatch, history, match, videos } = this.props;
 
     return (
       <div>
         <SearchBox dispatch={ dispatch } history={ history } />
         { React.cloneElement(this.props.children, { ...this.props }) }
-        <Pagination dispatch={ dispatch } state={ videos } />
+        { match.path === '/' ? <Pagination dispatch={ dispatch } state={ videos } /> : null }
       </div>
     );
   }
